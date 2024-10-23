@@ -6,4 +6,5 @@ venv
 .venv
 __pycache__
 !.gitignore
-media/
+# media/
+# .env
