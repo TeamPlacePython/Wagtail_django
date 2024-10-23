@@ -1,0 +1,51 @@
+{% load static wagtailcore_tags wagtailuserbar %}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                {% if page.seo_title %}
+                    {{ page.seo_title }}
+                {% else %}
+                    {{ page.title }}
+                {% endif %}
+            {% endblock %}
+
+            {% block title_suffix %}
+                {% wagtail_site as current_site %}
+                {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+            {% endblock %}
+        </title>
+
+        {% if page.search_description %}
+            <meta name="description" content="{{ page.search_description }}"/>
+        {% endif %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        {% if request.in_preview_panel %}
+            <base target="_blank">
+        {% endif %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+        {% block extra_css %}{% endblock %}
+    </head>
+
+    <body>
+        {% wagtailuserbar %}
+
+        {% block navigation %}{% include 'includes/navigation.html' %}{% endblock navigation %}
+
+        {% block content %}{% endblock %}
+
+        {% block footer %}{% include 'includes/footer.html' %}{% endblock footer %}
+
+        <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+        {% block modal %}{% endblock modal %}
+        {% block extra_js %}{% endblock %}
+    </body>
+</html>
