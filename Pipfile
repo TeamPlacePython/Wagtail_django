@@ -4,23 +4,23 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
 wagtail = "*"
 django-environ = "*"
 django-extensions = "*"
 pillow = "*"
 crispy-tailwind = "*"
 python-webpack-boilerplate = "*"
-whitenoise = "*"
 django-redis = "*"
 django-browser-reload = "*"
+django-debug-toolbar = "*"
+django = {extras = ["argon2"], version = "*"}
 
 [dev-packages]
 pytest = "*"
 pytest-django = "*"
-django-debug-toolbar = "*"
 psycopg2-binary = "*"
 notebook = "*"
+django-debug-toolbar = "*"
 
 [production]
 gunicorn = "*"

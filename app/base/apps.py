@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class UtilsConfig(AppConfig):
+class BaseConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "backend.utils"
+    name = "app.base"
