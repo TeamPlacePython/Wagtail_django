@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "app.users",
     "app.utils",
     "app.base",
+    # "app.search",
 ]
 
 # GESTION DU MUTLI-SITES:
